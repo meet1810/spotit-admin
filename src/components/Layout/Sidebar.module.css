@@ -1,0 +1,97 @@
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  height: 100vh; /* Ensures full height */
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 50;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.02);
+}
+
+.logoContainer {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  background-color: white;
+  padding: 0 1.5rem;
+}
+
+.logoWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav {
+  padding: 1rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navItem {
+  display: block;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1.25rem;
+  margin: 0 0.75rem;
+  border-radius: var(--radius-lg);
+  color: #64748B;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.navLink:hover {
+  background-color: #F1F5F9;
+  color: var(--gov-blue);
+  transform: translateX(4px);
+}
+
+.active {
+  background: linear-gradient(90deg, rgba(11, 60, 93, 0.1) 0%, rgba(11, 60, 93, 0.05) 100%);
+  color: var(--gov-blue);
+  font-weight: 600;
+  border-left: 3px solid var(--gov-blue);
+  border-radius: 4px var(--radius-lg) var(--radius-lg) 4px; /* Flat left side */
+}
+
+.logoutBtn {
+  margin-top: auto;
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Mobile responsive styles handled via transform in JS usually, or media queries */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
