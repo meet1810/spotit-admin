@@ -413,7 +413,7 @@ export default function Complaints() {
                                                 backgroundColor: selectedComplaint.status === 'PENDING' ? '#FEF3C7' : selectedComplaint.status === 'RESOLVED' ? '#D1FAE5' : '#E0E7FF',
                                                 color: selectedComplaint.status === 'PENDING' ? '#D97706' : selectedComplaint.status === 'RESOLVED' ? '#059669' : '#4338CA'
                                             }}>
-                                                {selectedComplaint.status}
+                                                {selectedComplaint.status === 'IN_PROGRESS' ? 'In Progress' : selectedComplaint.status === 'RESOLVED' ? 'Resolved' : selectedComplaint.status}
                                             </span>
                                         </div>
                                         <div>
@@ -433,7 +433,7 @@ export default function Complaints() {
                                         <div>
                                             <label style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '0.25rem', display: 'block' }}>Assigned To</label>
                                             {selectedComplaint.assignedTo ? (
-                                                <div style={{ fontWeight: 600 }}>{selectedComplaint.assignedTo}</div>
+                                                <div style={{ fontWeight: 600 }}>{selectedComplaint.worker.name}</div>
                                             ) : (
                                                 <div style={{ fontStyle: 'italic', color: '#94A3B8' }}>Not Assigned</div>
                                             )}
