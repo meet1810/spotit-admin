@@ -1,0 +1,308 @@
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.statHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.statTitle {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.iconWrapper {
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statFooter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.trend {
+  font-weight: 600;
+}
+
+.trendLabel {
+  color: var(--text-secondary);
+}
+
+/* Section Wrapper */
+.section {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Table Styles */
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table th {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  background-color: #F9FAFB;
+}
+
+.table td {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.statusBadge {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.statusPending {
+  background-color: #FEF3C7;
+  color: #D97706;
+}
+
+.statusResolved {
+  background-color: #D1FAE5;
+  color: #059669;
+}
+
+.statusAssigned {
+  background-color: #DBEAFE;
+  color: #2563EB;
+}
+
+.recentsGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Specific Map Section Style (Restored) */
+.mapSection {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mapControls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  max-width: calc(100% - 20px);
+}
+
+/* Recent Problems Styles */
+.problemCard {
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.problemCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.problemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.problemCategory {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.problemMeta {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.problemSeverity {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+}
+
+.viewAllLink {
+  color: var(--gov-blue);
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+}
+
+.viewAllLink:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+    .recentsGrid {
+        grid-template-columns: 1fr;
+    }
+    .mapSection {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboardGrid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .mapSection {
+        height: 350px;
+        padding: 1rem;
+    }
+
+    .section, .statCard {
+        padding: 1rem;
+    }
+    
+    .sectionHeader {
+        margin-bottom: 1rem;
+    }
+
+    .sectionTitle {
+        font-size: 1rem;
+    }
+
+    .table th, .table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .statHeader {
+        margin-bottom: 0.5rem;
+    }
+    
+    .statValue {
+        font-size: 1.25rem;
+    }
+    
+    /* Make table scrollable cleanly */
+    .tableContainer {
+        margin: 0 -1rem; /* Negative margin to let table touch edges on small screens */
+        padding: 0 1rem;
+        width: calc(100% + 2rem);
+    }
+    
+    .mapControls {
+        top: auto;
+        bottom: 10px;
+        right: 5px;
+        left: 5px;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.98);
+    }
+}
+
+@media (max-width: 550px) {
+    .mapSection {
+        height: 300px;
+        padding: 0.75rem;
+    }
+
+    .mapControls {
+        bottom: 5px;
+        padding: 0.25rem;
+        gap: 0.25rem;
+    }
+
+    .mapControls button {
+        font-size: 0.7rem !important;
+        padding: 0.2rem 0.4rem !important;
+    }
+}

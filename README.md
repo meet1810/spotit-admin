@@ -1,40 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# SPOT-IT Admin Panel
+
+The **SPOT-IT Admin Panel** is a comprehensive web interface designed for administrators to manage and monitor the road defect detection system. It allows for real-time tracking of reported issues, worker management, and a rewards system for community engagement.
+
+## Features
+
+- **Dashboard**:
+  - Real-time overview of total complaints, workers, clients, and resolved issues.
+  - Interactive map showing live locations of reported defects.
+  - "Recent Problems" and "Recent Detections" lists for quick monitoring.
+  - Fully responsive design optimized for desktop and mobile.
+
+- **Complaints Management**:
+  - View detailed lists of reported road defects (potholes, waterlogging, etc.).
+  - Track status (Pending, Assigned, Resolved) and severity levels.
+  - View attached images and location data.
+
+- **Workers Management**:
+  - Add, edit, and delete field workers.
+  - Assign specific complaints to workers.
+  - Monitor worker performance and task history.
+
+- **Rewards System**:
+  - Manage a detailed rewards catalog (e.g., coupons, vouchers).
+  - Add, edit, and delete reward items.
+  - Toggle reward status (Active/Inactive).
+  - User-friendly modals for managing reward details with validation.
+
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (React)
+- **Styling**: CSS Modules, Responsive Design
+- **State Management**: React Hooks (`useState`, `useEffect`)
+- **API Integration**: [Axios](https://axios-http.com/)
+- **Forms**: [React Hook Form](https://react-hook-form.com/)
+- **Maps**: [Leaflet](https://leafletjs.com/) / [React Leaflet](https://react-leaflet.js.org/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Notifications**: [React Toastify](https://fkhadra.github.io/react-toastify/)
+
+## structured
+
+```
+src/
+├── components/       # Reusable UI components
+│   ├── Common/       # Loaders, Modals, Pagination
+│   ├── Dashboard/    # Dashboard widgets, Map, StatCards
+│   └── Layout/       # Sidebar, TopBar, Main Layout wrapper
+├── pages/            # Next.js Pages (Routes)
+│   ├── api/          # API routes (if applicable)
+│   ├── _app.js       # Global app wrapper
+│   ├── index.js      # Dashboard (Home)
+│   ├── complaints.js # Complaints module
+│   ├── workers.js    # Workers module
+│   └── rewards.js    # Rewards module
+└── styles/           # Global and Module CSS
+    ├── globals.css   # Base styles
+    └── ...           # Component-specific styles
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/your-repo/spotit-admin.git
+    cd spotit-admin
+    ```
+
+2.  Install dependencies:
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+3.  Set up Environment Variables:
+    Create a `.env.local` file in the root directory and add your API base URL:
+    ```env
+    NEXT_PUBLIC_API_BASE_URL=http://localhost:5000
+    ```
+
+4.  Run the development server:
+    ```bash
+    npm run dev
+    ```
+
+5.  Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Deployment
+
+This is a standard Next.js application and can be deployed easily on [Vercel](https://vercel.com/) or any platform supporting Node.js apps.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contributing
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+1.  Fork the repository.
+2.  Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4.  Push to the branch (`git push origin feature/AmazingFeature`).
+5.  Open a Pull Request.
